@@ -32,9 +32,6 @@ export default {
   padding: 0.4em 1em;
   cursor: pointer;
 }
-.side_submenus ul {
-  padding-left: 1.4em;
-}
 .side_arrow {
   position: absolute;
   top: 0.8em;

@@ -1,11 +1,9 @@
+import renderViews from '@/services/render'
+
 export default {
   name: 'Home',
-  render () {
-    return (
-      <div>
-        <p>home view</p>
-        <p-count label="Total" value="100" />
-      </div>
-    )
+  render (createElement) {
+    const children = renderViews(createElement, this.$parent.overview)
+    return createElement('div', { class: 'route-view' }, children)
   },
 }

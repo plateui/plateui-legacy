@@ -13,12 +13,12 @@
         {
           "name": "Users",
           "path": "/users",
-          "endpoint": "/routes/users.json"
+          "endpoint": "/data/routes/users.json"
         },
         {
           "name": "Groups",
           "path": "/groups",
-          "endpoint": "/routes/groups.json"
+          "endpoint": "/data/routes/groups.json"
         }
       ]
     },
@@ -30,17 +30,32 @@
         {
           "name": "Posts",
           "path": "/",
-          "endpoint": "/routes/posts.json"
+          "endpoint": "/data/routes/posts.json"
         }
       ]
     }
   ],
   "overview": [
     {
-      "component": "count",
-      "label": "Total Users",
-      "value": 1234,
-      "color": "green"
+      "name": "Users",
+      "views": [
+        {
+          "component": "count",
+          "data": {
+            "label": "Users",
+            "value": 1234,
+            "color": "green"
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Groups",
+            "value": 1234,
+            "color": "purple"
+          }
+        }
+      ]
     }
   ]
 }

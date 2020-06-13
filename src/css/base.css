@@ -11,7 +11,8 @@
   --zh-sans: "PingFang SC","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei";
   --code-font: Menlo,Monaco,Consolas,"Courier New";
 
-  --color-text: #313132;
+  --text-hex: #313132;
+  --color-rgb: 80, 80, 80;
 }
 
 body {
@@ -38,8 +39,24 @@ body {
   overflow-y: auto;
 }
 .app_main .main {
-  padding: 1em;
+  padding: 1em 2em;
 }
 .app_svgs {
   display: none;
+}
+
+.blue {
+  --color-rgb: var(--blue-rgb);
+}
+.red {
+  --color-rgb: var(--red-rgb);
+}
+.green {
+  --color-rgb: var(--green-rgb);
+}
+.yellow {
+  --color-rgb: var(--yellow-rgb);
+}
+.purple {
+  --color-rgb: var(--purple-rgb);
 }

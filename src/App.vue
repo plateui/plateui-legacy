@@ -18,6 +18,7 @@ export default {
     logo: String,
     vars: Object,
     menus: Array,
+    overview: Array,
   },
 }
 </script>

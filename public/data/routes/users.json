@@ -1,0 +1,36 @@
+{
+  "name": "Users",
+  "views": [
+    {
+      "name": "Stats",
+      "views": [
+        {
+          "component": "count",
+          "data": {
+            "label": "Total",
+            "value": 2314,
+            "color": "yellow"
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Active",
+            "value": 2201,
+            "color": "green",
+            "summary": "98%"
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Spammer",
+            "value": 123,
+            "color": "red",
+            "summary": "2%"
+          }
+        }
+      ]
+    }
+  ]
+}

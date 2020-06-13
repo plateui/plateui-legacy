@@ -21,6 +21,13 @@ export function hex2rgb (color) {
   }
 }
 
+export function isColor (color) {
+  if (/^#?([a-fA-F0-9]{3}){1,2}$/.test(color)) {
+    return true
+  }
+  return /^rgba?\((\d+),\s*(\d+),\s*(\d+)/.test(color)
+}
+
 export function isLight (color) {
   const [r, g, b] = hex2rgb(color)
   return r * 299 + g * 587 + b * 144 > 200000

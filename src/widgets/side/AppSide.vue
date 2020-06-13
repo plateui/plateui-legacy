@@ -83,4 +83,7 @@ export default {
   background: rgba(var(--primary-rgb), 0.05);
   border-radius: 4px;
 }
+.side_submenus ul {
+  padding-left: 1.4em;
+}
 </style>
