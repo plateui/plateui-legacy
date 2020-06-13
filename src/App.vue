@@ -1,32 +1,25 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+<div id="app" :style="vars">
+  <app-side :name="name" :logo="logo" :menus="menus" />
+  <div class="app_main">
+    <router-view class="main" />
   </div>
+</div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import AppSide from './widgets/side/AppSide.vue'
 
-#nav {
-  padding: 30px;
+export default {
+  components: { AppSide },
+  name: 'App',
+  props: {
+    name: String,
+    logo: String,
+    vars: Object,
+    menus: Array,
+  },
 }
+</script>
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style src="./css/index.css"></style>

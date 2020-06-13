@@ -1,4 +1,4 @@
-function request(url, payload = {}) {
+function request (url, payload = {}) {
   let { headers = {}, data, body, method } = payload
 
   if (data) {
@@ -21,7 +21,7 @@ function request(url, payload = {}) {
   })
 
   if (xhr.upload && payload.onprogress) {
-    xhr.upload.onprogress = function progress(e) {
+    xhr.upload.onprogress = function progress (e) {
       if (e.total > 0) {
         e.percent = e.loaded / e.total * 100
       }
@@ -30,12 +30,12 @@ function request(url, payload = {}) {
   }
 
   return new Promise((resolve, reject) => {
-    xhr.onerror = function(error) {
+    xhr.onerror = function (error) {
       error.xhr = xhr
       reject(error)
     }
 
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
       if (xhr.readyState === xhr.DONE && xhr.status) {
         if (xhr.status >= 500) {
           const error = new Error(xhr.statusText)
@@ -63,7 +63,7 @@ function request(url, payload = {}) {
   })
 }
 
-function get(url, { params, headers } = {}) {
+function get (url, { params, headers } = {}) {
   if (params) {
     if (/\?/.test(url)) {
       url += '&'
@@ -77,19 +77,19 @@ function get(url, { params, headers } = {}) {
   return request(url, { headers })
 }
 
-function del(url) {
+function del (url) {
   return request(url, { method: 'DELETE' })
 }
 
-function post(url, { data, headers } = {}) {
+function post (url, { data, headers } = {}) {
   return request(url, { data, headers, method: 'POST' })
 }
 
-function put(url, { data, headers } = {}) {
+function put (url, { data, headers } = {}) {
   return request(url, { data, headers, method: 'PUT' })
 }
 
-function patch(url, { data, headers } = {}) {
+function patch (url, { data, headers } = {}) {
   return request(url, { data, headers, method: 'PATCH' })
 }
 

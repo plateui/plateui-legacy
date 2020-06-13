@@ -1,0 +1,45 @@
+:root {
+  --primary-rgb: 66, 185, 131;
+  --blue-rgb: 17, 163, 231;
+  --red-rgb: 226, 129, 149;
+  --green-rgb: 115, 193, 149;
+  --yellow-rgb: 255, 189, 68;
+  --purple-rgb: 166, 134, 220;
+
+  --sys-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
+  --en-sans: 'Helvetica Neue';
+  --zh-sans: "PingFang SC","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei";
+  --code-font: Menlo,Monaco,Consolas,"Courier New";
+
+  --color-text: #313132;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+  background: #fff;
+  font: 16px/1.42 var(--sys-sans), var(--en-sans), var(--zh-sans), sans-serif;
+}
+.app_side {
+  width: 260px;
+  flex-shrink: 0;
+  height: 100vh;
+  background: #fafafa;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+.app_main {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.app_main .main {
+  padding: 1em;
+}
+.app_svgs {
+  display: none;
+}

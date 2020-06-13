@@ -1,10 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import plate from './index'
 
-Vue.config.productionTip = false
+window.plate = plate
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+plate.init('/data/index.json').then(app => {
+  app.$mount('#app')
+})

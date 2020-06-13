@@ -1,0 +1,46 @@
+{
+  "name": "Typlog",
+  "logo": "https://i.typlog.com/blog/8445734763_713121.png",
+  "vars": {
+    "--primary-rgb": "66,185,131"
+  },
+  "menus": [
+    {
+      "icon": "user",
+      "name": "Account",
+      "path": "/account",
+      "routes": [
+        {
+          "name": "Users",
+          "path": "/users",
+          "endpoint": "/routes/users.json"
+        },
+        {
+          "name": "Groups",
+          "path": "/groups",
+          "endpoint": "/routes/groups.json"
+        }
+      ]
+    },
+    {
+      "icon": "file",
+      "name": "Posts",
+      "path": "/posts",
+      "routes": [
+        {
+          "name": "Posts",
+          "path": "/",
+          "endpoint": "/routes/posts.json"
+        }
+      ]
+    }
+  ],
+  "overview": [
+    {
+      "component": "count",
+      "label": "Total Users",
+      "value": 1234,
+      "color": "green"
+    }
+  ]
+}
