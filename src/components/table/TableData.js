@@ -1,4 +1,5 @@
 import TableContent from './TableContent'
+import Pagination from '../Pagination'
 
 export default {
   name: 'table-data',
@@ -10,14 +11,24 @@ export default {
     return {
       loading: true,
       items: [],
+      pagination: null,
       orders: [],
     }
   },
   methods: {
     async fetch () {
+      this.loading = true
       const url = this.endpoint
-      const { data } = await this.$http.get(url)
+      const params = {}
+      if (this.pagination) {
+        params.page = this.pagination.page
+      }
+      // TODO: order
+      const { data } = await this.$http.get(url, { params })
+
       this.items = data.items
+      this.pagination = data.pagination
+      this.loading = false
     },
     onOrder ({ key, order }) {
       let found = false
@@ -32,6 +43,11 @@ export default {
       if (!found) {
         this.orders.push({ key, order })
       }
+      this.$set(this.pagination, 'page', 1)
+      this.fetch()
+    },
+    onPage (page) {
+      this.$set(this.pagination, 'page', page)
       this.fetch()
     },
   },
@@ -40,10 +56,19 @@ export default {
       <div class="table_content">
         <TableContent items={this.items} columns={this.columns}
           onOrder={this.onOrder} />
+        { !this.items.length && <div class="table_none">
+          { !this.loading && <div>
+            <svg-icon name="inbox" />
+            <div>No Data</div>
+          </div> }
+        </div> }
+        { this.loading && <div class="table_spinner">
+          <svg-icon name="loader" />
+        </div> }
       </div>
-      <div class="table_pagination">
-      </div>
-      <div class="table_spinner"></div>
+      { this.pagination && <div class="table_pagination">
+        <Pagination { ...{ props: this.pagination } } onSelect={this.onPage} />
+      </div> }
     </div>)
   },
   created () {
