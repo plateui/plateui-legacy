@@ -1,5 +1,5 @@
 <template>
-<router-link class="side_menu" :to="menu.path + route.path" :exact="path=='/'">
+<router-link class="side_menu" :to="route.path" :exact="route.path=='/'">
   <svg-icon :name="menu.icon" />
   <span v-text="route.name"></span>
 </router-link>
@@ -10,11 +10,6 @@ export default {
   props: {
     menu: Object,
     route: Object,
-  },
-  computed: {
-    path () {
-      return this.menu.path + this.route.path
-    },
   },
 }
 </script>

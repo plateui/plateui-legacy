@@ -17,7 +17,7 @@ export default {
   app: null,
   async init (url) {
     const { data } = await http.get(url)
-    const routes = buildRoutes(data.menus)
+    const routes = buildRoutes(data)
     const router = new VueRouter({ routes })
     const app = new Vue({
       router,

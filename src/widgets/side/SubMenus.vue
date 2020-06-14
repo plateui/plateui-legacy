@@ -7,7 +7,7 @@
   </div>
   <ul v-show="!collapse">
     <li v-for="route in menu.routes" :key="route.name">
-      <router-link :to="menu.path + route.path" v-text="route.name"></router-link>
+      <router-link :to="route.path" v-text="route.name"></router-link>
     </li>
   </ul>
 </div>

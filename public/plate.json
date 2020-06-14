@@ -10,11 +10,10 @@
     {
       "icon": "home",
       "name": "Overview",
-      "path": "/",
       "routes": [
         {
           "name": "Overview",
-          "path": "",
+          "path": "/",
           "endpoint": "/routes/home.json"
         }
       ]
@@ -22,7 +21,6 @@
     {
       "icon": "user",
       "name": "Account",
-      "path": "/account",
       "routes": [
         {
           "name": "Users",
@@ -39,14 +37,20 @@
     {
       "icon": "file",
       "name": "Posts",
-      "path": "/posts",
       "routes": [
         {
           "name": "Posts",
-          "path": "",
+          "path": "/posts",
           "endpoint": "/routes/posts.json"
         }
       ]
+    }
+  ],
+  "routes": [
+    {
+      "name": "UserView",
+      "path": "/users/:id",
+      "endpoint": "/routes/users-:id.json"
     }
   ]
 }

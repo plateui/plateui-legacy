@@ -1,20 +1,26 @@
 import RouteView from './RouteView'
 
-export default function (menus) {
+export default function (data) {
   const routes = []
-  menus.forEach(menu => {
+  data.menus.forEach(menu => {
     menu.routes.forEach(r => {
-      const path = menu.path + r.path
-      routes.push({
-        path,
-        name: `${menu.name}-${r.name}`,
-        component: RouteView,
-        meta: {
-          name: r.name,
-          endpoint: r.endpoint,
-        },
-      })
+      routes.push(genRoute(menu.name, r))
     })
   })
+  data.routes.forEach(r => {
+    routes.push(genRoute('Route', r))
+  })
   return routes
+}
+
+function genRoute (prefix, r) {
+  return {
+    path: r.path,
+    name: `${prefix}-${r.name}`,
+    component: RouteView,
+    meta: {
+      name: r.name,
+      endpoint: r.endpoint,
+    },
+  }
 }
