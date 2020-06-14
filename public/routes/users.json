@@ -31,6 +31,55 @@
           }
         }
       ]
+    },
+    {
+      "name": "List",
+      "component": "table",
+      "data": {
+        "columns": [
+          {
+            "name": "ID",
+            "type": "number",
+            "primary": true,
+            "key": "id"
+          },
+          {
+            "name": "Avatar",
+            "type": "avatar",
+            "style": {
+              "width": 48,
+              "height": 48
+            },
+            "key": "avatar_url"
+          },
+          {
+            "name": "Name",
+            "type": "string",
+            "key": "name"
+          },
+          {
+            "name": "Email",
+            "type": "email",
+            "key": "email"
+          },
+          {
+            "name": "Tags",
+            "type": "tag",
+            "key": "tags"
+          },
+          {
+            "name": "Active",
+            "type": "boolean",
+            "key": "active"
+          },
+          {
+            "name": "Register At",
+            "type": "datetime",
+            "key": "created_at"
+          }
+        ],
+        "endpoint": "/data/users-list.json"
+      }
     }
   ]
 }

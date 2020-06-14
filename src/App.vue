@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AppSide from './widgets/side/AppSide.vue'
+import AppSide from './components/side/AppSide.vue'
 
 export default {
   components: { AppSide },
