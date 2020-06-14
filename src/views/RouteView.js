@@ -11,7 +11,7 @@ export default {
     }
   },
   watch: {
-    '$route': {
+    $route: {
       immediate: true,
       deep: true,
       async handler ({ meta, params }) {

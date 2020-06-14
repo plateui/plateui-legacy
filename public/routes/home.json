@@ -21,6 +21,13 @@
           }
         }
       ]
+    },
+    {
+      "name": "Visits",
+      "component": "line-chart",
+      "data": {
+        "endpoint": "/data/visit-metrics.json"
+      }
     }
   ]
 }
