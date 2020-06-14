@@ -39,7 +39,7 @@ body {
   overflow-y: auto;
 }
 .app_main .main {
-  padding: 1em 2em;
+  padding: 1em;
 }
 .app_svgs {
   display: none;

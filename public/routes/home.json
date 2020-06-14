@@ -1,0 +1,26 @@
+{
+  "name": "Home",
+  "views": [
+    {
+      "name": "Users",
+      "views": [
+        {
+          "component": "count",
+          "data": {
+            "label": "Users",
+            "value": 1234,
+            "color": "green"
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Groups",
+            "value": 1234,
+            "color": "purple"
+          }
+        }
+      ]
+    }
+  ]
+}

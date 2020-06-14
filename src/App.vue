@@ -1,6 +1,6 @@
 <template>
-<div id="app" :style="vars">
-  <app-side :name="name" :logo="logo" :menus="menus" />
+<div id="app" :style="company.style">
+  <app-side :company="company" :menus="menus" />
   <div class="app_main">
     <router-view class="main" />
   </div>
@@ -14,11 +14,8 @@ export default {
   components: { AppSide },
   name: 'App',
   props: {
-    name: String,
-    logo: String,
-    vars: Object,
+    company: Object,
     menus: Array,
-    overview: Array,
   },
 }
 </script>

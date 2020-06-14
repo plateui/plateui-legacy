@@ -1,17 +1,11 @@
 <template>
 <aside class="app_side side">
   <div class="side_head">
-    <img :src="logo" :alt="name" v-if="logo">
-    <strong v-text="name"></strong>
+    <img :src="company.logo" :alt="company.name" v-if="company.logo">
+    <strong v-text="company.name"></strong>
   </div>
   <div class="side_menus">
     <ul>
-      <li>
-        <router-link to="/" exact>
-          <svg-icon name="home" />
-          <span>Overview</span>
-        </router-link>
-      </li>
       <li v-for="menu in menus" :key="menu.name">
         <menu-link :menu="menu" :route="menu.routes[0]" v-if="menu.routes.length === 1" />
         <sub-menus :menu="menu" v-else />
@@ -31,8 +25,7 @@ export default {
   name: 'AppSide',
   components: { MenuLink, SubMenus },
   props: {
-    name: String,
-    logo: String,
+    company: Object,
     menus: Array,
   },
 }

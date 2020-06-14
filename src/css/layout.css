@@ -1,0 +1,9 @@
+.section {
+  padding: 1em;
+}
+h1.section_title {
+  font-size: 1.4em;
+  margin: 0 0 0.4em;
+  color: rgba(0, 0, 0, 0.86);
+  font-weight: 900;
+}
