@@ -78,30 +78,7 @@
   padding: 0.8em 0 0;
   text-align: right;
 }
-.table_spinner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.86);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4em;
-  color: #dadada;
-}
-.table_none {
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.2);
-}
 
-.table_none svg {
-  font-size: 3.6em;
-  color: #dadada;
+.table_none {
+  height: 200px;
 }

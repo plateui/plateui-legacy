@@ -16,13 +16,10 @@
         </div>
       </template>
     </p-chart>
-    <div class="chart_none" v-else>
-      <svg-icon name="inbox" />
-      <div>No Data</div>
-    </div>
+    <p-empty v-else />
   </div>
-  <div class="chart_loading" v-else style="height:20em">
-    <svg-icon name="loader" />
+  <div class="chart_spinner" v-else style="height:20em">
+    <p-spinner />
   </div>
 </div>
 </template>
@@ -83,6 +80,7 @@ export default {
 .line-chart {
   box-shadow: var(--border-shadow);
   border-radius: 8px;
+  overflow: hidden;
 }
 .line-chart .chart_head {
   padding: 1.4em 0;
@@ -104,18 +102,6 @@ export default {
   display: block;
   padding-left: 14px;
 }
-.chart_none {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: rgba(0, 0, 0, 0.2);
-  height: 100%;
-  font-size: 1.2em;
-}
-.chart_none svg {
-  font-size: 3.6em;
-  color: #dadada;
-}
 .chart_dot:before {
   content: '';
   display: inline-block;
@@ -128,5 +114,8 @@ export default {
 }
 .chart_dot._active:before {
   opacity: 1;
+}
+.chart_spinner {
+  position: relative;
 }
 </style>

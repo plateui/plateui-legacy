@@ -1,11 +1,15 @@
 import icons from './icons'
 import Tag from './Tag'
+import Empty from './Empty'
+import Spinner from './Spinner'
 import Count from './Count'
 import TableData from './table/TableData'
 import LineChart from './charts/LineChart'
 
 const _COMPONENTS = [
   Tag,
+  Empty,
+  Spinner,
   Count,
   TableData,
   LineChart,

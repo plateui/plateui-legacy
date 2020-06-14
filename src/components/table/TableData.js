@@ -57,14 +57,9 @@ export default {
         <TableContent items={this.items} columns={this.columns}
           onOrder={this.onOrder} />
         { !this.items.length && <div class="table_none">
-          { !this.loading && <div>
-            <svg-icon name="inbox" />
-            <div>No Data</div>
-          </div> }
+          { !this.loading && <p-empty /> }
         </div> }
-        { this.loading && <div class="table_spinner">
-          <svg-icon name="loader" />
-        </div> }
+        { this.loading && <p-spinner /> }
       </div>
       { this.pagination && <div class="table_pagination">
         <Pagination { ...{ props: this.pagination } } onSelect={this.onPage} />
