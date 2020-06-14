@@ -1,20 +1,18 @@
 import icons from './icons'
+import Tag from './Tag'
 import Count from './Count'
-import Table from './table/Table'
+import TableData from './table/TableData'
 
 const _COMPONENTS = [
+  Tag,
   Count,
-  Table,
+  TableData,
 ]
 
 function install (Vue) {
   Vue.use(icons)
   _COMPONENTS.forEach(C => {
-    if (/^p-/.test(C.name)) {
-      Vue.component(C.name, C)
-    } else {
-      Vue.component('p-' + C.name, C)
-    }
+    Vue.component('p-' + C.name, C)
   })
 }
 

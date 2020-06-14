@@ -1,8 +1,7 @@
-import TableHead from './TableHead'
-import TableRow from './TableRow'
+import TableContent from './TableContent'
 
 export default {
-  name: 'p-table',
+  name: 'table-data',
   props: {
     columns: Array,
     endpoint: String,
@@ -11,6 +10,7 @@ export default {
     return {
       loading: true,
       items: [],
+      orders: [],
     }
   },
   methods: {
@@ -19,17 +19,27 @@ export default {
       const { data } = await this.$http.get(url)
       this.items = data.items
     },
+    onOrder ({ key, order }) {
+      let found = false
+      this.orders = this.orders.map(o => {
+        if (o.key === key) {
+          found = true
+          o.order = order
+          return o
+        }
+        return o
+      })
+      if (!found) {
+        this.orders.push({ key, order })
+      }
+      this.fetch()
+    },
   },
   render () {
-    const rows = this.items.map(item => {
-      return (<TableRow item={item} columns={this.columns} />)
-    })
     return (<div class="table">
       <div class="table_content">
-        <table>
-          <TableHead columns={this.columns} />
-          <tbody>{rows}</tbody>
-        </table>
+        <TableContent items={this.items} columns={this.columns}
+          onOrder={this.onOrder} />
       </div>
       <div class="table_pagination">
       </div>

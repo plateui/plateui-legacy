@@ -23,12 +23,12 @@
       "name": "Account",
       "routes": [
         {
-          "name": "Users",
+          "name": "UsersList",
           "path": "/users",
           "endpoint": "/routes/users.json"
         },
         {
-          "name": "Groups",
+          "name": "GroupsList",
           "path": "/groups",
           "endpoint": "/routes/groups.json"
         }
@@ -39,7 +39,7 @@
       "name": "Posts",
       "routes": [
         {
-          "name": "Posts",
+          "name": "PostsList",
           "path": "/posts",
           "endpoint": "/routes/posts.json"
         }

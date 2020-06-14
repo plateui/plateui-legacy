@@ -1,0 +1,74 @@
+.table_content {
+  border-radius: 4px;
+  box-shadow: var(--border-shadow);
+  overflow: auto;
+}
+.table_content table {
+  table-layout: auto;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.table_content thead th {
+  padding: 0.86em;
+  font-size: 0.86em;
+  font-weight: 500;
+  background: rgba(var(--color-rgb), 0.2);
+}
+.table_content td {
+  padding: 0.64em;
+  text-align: center;
+}
+.table_content td a {
+  color: rgba(var(--blue-rgb), 0.86);
+}
+.table_content td a:hover {
+  color: rgba(var(--blue-rgb), 1);
+}
+
+.th-sort {
+  position: relative;
+  white-space: nowrap;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.th-sort_arrow > svg {
+  position: absolute;
+  font-size: 12px;
+  stroke-width: 2;
+  transition: color 0.2s ease;
+}
+.th-sort_arrow .chevron-up {
+  top: 0;
+  right: 0;
+}
+.th-sort_arrow .chevron-down {
+  bottom: 0;
+  right: 0;
+}
+.th-sort[data-order="desc"] .chevron-down {
+  color: rgb(var(--blue-rgb));
+}
+.th-sort[data-order="asc"] .chevron-up {
+  color: rgb(var(--blue-rgb));
+}
+
+.td-boolean .check-circle {
+  color: rgb(var(--green-rgb));
+}
+.td-boolean .x-circle {
+  color: rgb(var(--red-rgb));
+}
+.td-boolean .circle {
+  color: rgb(var(--yellow-rgb));
+}
+.td-image img {
+  vertical-align: middle;
+}
+.td-image a {
+  text-decoration: none;
+}
+.td-datetime {
+  font-size: 0.82em;
+  font-family: var(--code-font), monospace;
+}

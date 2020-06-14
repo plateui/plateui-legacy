@@ -4,19 +4,19 @@ export default function (data) {
   const routes = []
   data.menus.forEach(menu => {
     menu.routes.forEach(r => {
-      routes.push(genRoute(menu.name, r))
+      routes.push(genRoute(r))
     })
   })
   data.routes.forEach(r => {
-    routes.push(genRoute('Route', r))
+    routes.push(genRoute(r))
   })
   return routes
 }
 
-function genRoute (prefix, r) {
+function genRoute (r) {
   return {
     path: r.path,
-    name: `${prefix}-${r.name}`,
+    name: r.name,
     component: RouteView,
     meta: {
       name: r.name,

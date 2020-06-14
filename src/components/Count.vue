@@ -40,7 +40,7 @@ export default {
   line-height: 1.2;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--border-shadow);
   border-top: 4px solid rgba(var(--color-rgb, 0.6));
   box-sizing: border-box;
 }

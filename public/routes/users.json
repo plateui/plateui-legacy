@@ -34,21 +34,29 @@
     },
     {
       "name": "List",
-      "component": "table",
+      "component": "table-data",
       "data": {
         "columns": [
           {
             "name": "ID",
             "type": "number",
             "primary": true,
+            "config": {
+              "route": "UserView",
+              "sortable": true
+            },
             "key": "id"
           },
           {
             "name": "Avatar",
-            "type": "avatar",
-            "style": {
-              "width": 48,
-              "height": 48
+            "type": "image",
+            "config": {
+              "style": {
+                "width": "42px",
+                "height": "42px",
+                "border-radius": "50%"
+              },
+              "route": "UserView"
             },
             "key": "avatar_url"
           },
@@ -59,8 +67,13 @@
           },
           {
             "name": "Email",
-            "type": "email",
+            "type": "string",
             "key": "email"
+          },
+          {
+            "name": "Website",
+            "type": "link",
+            "key": "website"
           },
           {
             "name": "Tags",
@@ -70,7 +83,10 @@
           {
             "name": "Active",
             "type": "boolean",
-            "key": "active"
+            "key": "active",
+            "config": {
+              "filters": ["y", "n"]
+            }
           },
           {
             "name": "Register At",

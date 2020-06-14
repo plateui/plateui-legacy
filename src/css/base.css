@@ -12,7 +12,9 @@
   --code-font: Menlo,Monaco,Consolas,"Courier New";
 
   --text-hex: #313132;
-  --color-rgb: 80, 80, 80;
+  --color-rgb: 220, 220, 220;
+
+  --border-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
 body {
