@@ -1,4 +1,34 @@
 {
   "name": "Profile",
-  "views": []
+  "views": [
+    {
+      "name": "Stats",
+      "views": [
+        {
+          "component": "count",
+          "data": {
+            "label": "Posts",
+            "value": 214,
+            "color": "blue"
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Episodes",
+            "value": 83,
+            "color": "purple"
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Moments",
+            "value": 2039,
+            "color": "yellow"
+          }
+        }
+      ]
+    }
+  ]
 }

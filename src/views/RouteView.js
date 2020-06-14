@@ -67,15 +67,14 @@ function renderGroup (createElement, views, className) {
 }
 
 function renderItem (createElement, view) {
-  if (view.views) {
-    const children = []
-    if (view.name) {
-      children.push(createElement('h1', { class: 'section_title' }, [view.name]))
-    }
-    children.push(renderGroup(createElement, view.views))
-    return createElement('section', { class: 'section' }, children)
+  const children = []
+  if (view.name) {
+    children.push(createElement('h1', { class: 'section_title' }, [view.name]))
   }
-  return createElement('div', { class: 'section' }, [
-    createElement('p-' + view.component, { props: view.data }),
-  ])
+  if (view.views) {
+    children.push(renderGroup(createElement, view.views))
+  } else {
+    children.push(createElement('p-' + view.component, { props: view.data }))
+  }
+  return createElement('section', { class: 'section' }, children)
 }

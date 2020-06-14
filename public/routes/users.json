@@ -2,7 +2,7 @@
   "name": "Users",
   "views": [
     {
-      "name": "Stats",
+      "name": "Overview",
       "views": [
         {
           "component": "count",
@@ -33,7 +33,7 @@
       ]
     },
     {
-      "name": "List",
+      "name": "Users",
       "component": "table-data",
       "data": {
         "columns": [

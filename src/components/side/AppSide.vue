@@ -64,16 +64,17 @@ export default {
 }
 .side_menus a {
   text-decoration: none;
+  transition: background 0.2s ease;
 }
 .side_menus a.router-link-active {
-  background: rgba(var(--primary-rgb), 0.1);
+  background: rgba(var(--primary-rgb), 0.16);
 }
 .side_menus > ul > li {
   margin: 0.16em 0;
 }
 .side_menus a:hover,
 .side_submenus > div:hover {
-  background: rgba(var(--primary-rgb), 0.05);
+  background: rgba(var(--primary-rgb), 0.1);
   border-radius: 4px;
 }
 .side_submenus ul {
