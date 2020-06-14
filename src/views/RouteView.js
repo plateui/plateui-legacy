@@ -1,3 +1,4 @@
+import { compile } from 'path-to-regexp'
 import http from '@/services/http'
 
 export default {
@@ -10,10 +11,15 @@ export default {
     }
   },
   watch: {
-    '$route.meta.endpoint': {
+    '$route': {
       immediate: true,
-      async handler (endpoint) {
+      deep: true,
+      async handler ({ meta, params }) {
         this.loading = true
+        let endpoint = meta.endpoint
+        if (Object.keys(params).length) {
+          endpoint = compile(endpoint, { encode: encodeURIComponent })(params)
+        }
         const { data } = await http.get(endpoint)
         this.name = data.name
         this.views = data.views
