@@ -119,19 +119,19 @@ function addHook (fn, isResponseHook = false) {
 async function paginate (url, params = {}) {
   const xhr = await get(url, { params })
   let pagination = { page: params.page || 1 }
-  const header = xhr.getResponseHeader('Link')
-  if (header) {
-    const links = parseWebLinks(header)
-    links.forEach(d => {
-      if (d.rel === 'last' && d.page) {
-        pagination.last = d.page
-      }
-    })
-  }
   let items = []
   const data = xhr.data
   if (Array.isArray(data)) {
     items = data
+    const header = xhr.getResponseHeader('Link')
+    if (header) {
+      const links = parseWebLinks(header)
+      links.forEach(d => {
+        if (d.rel === 'last' && d.page) {
+          pagination.last = d.page
+        }
+      })
+    }
   } else {
     if (data.pagination) {
       pagination = data.pagination

@@ -20,8 +20,9 @@ export default {
   background: rgba(255, 255, 255, 0.86);
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 2em;
   font-size: 4em;
   color: #dadada;
+  box-sizing: border-box;
 }
 </style>

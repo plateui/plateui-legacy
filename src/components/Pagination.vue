@@ -1,5 +1,5 @@
 <template>
-<div class="pagination">
+<div class="pagination" v-if="pages > 1">
   <ul class="pagination_list">
     <li :class="{'_disabled': !prevPage}">
       <a class="prev" @click="select(prevPage)">

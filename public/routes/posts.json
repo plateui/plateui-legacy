@@ -1,3 +1,73 @@
 {
-  "views": []
+  "views": [
+    {
+      "name": "Stats",
+      "views": [
+        {
+          "component": "count",
+          "data": {
+            "label": "Total",
+            "color": "blue",
+            "value": 9920
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Published",
+            "color": "green",
+            "value": 8610
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Draft",
+            "color": "yellow",
+            "value": 1310
+          }
+        }
+      ]
+    },
+    {
+      "name": "Post List",
+      "component": "list-data",
+      "data": {
+        "endpoint": "https://blog.typlog.com/api/posts",
+        "media": {
+          "key": "cover.src",
+          "config": {
+            "style": {
+              "width": "200px",
+              "border-radius": "4px"
+            }
+          }
+        },
+        "title": {
+          "key": "title"
+        },
+        "subtitle": {
+          "key": "subtitle"
+        },
+        "information": [
+          {
+            "key": "status"
+          },
+          {
+            "key": "url",
+            "type": "link",
+            "config": {
+              "text": "Link"
+            }
+          },
+          {
+            "key": "template"
+          }
+        ],
+        "metadata": {
+          "key": "id"
+        }
+      }
+    }
+  ]
 }

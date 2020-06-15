@@ -29,16 +29,16 @@ const components = {
       return h(Tag, { props: { value }, style })
     }
   },
-  link (h, value, { style }) {
+  link (h, value, { style, text }) {
     if (!value) {
       return h('span', { attrs: { class: 'no-value' } }, ['-'])
     }
-    let text, href
+    let href
     if (typeof value === 'string') {
-      text = value
+      text = text || value
       href = value
     } else {
-      text = value.text
+      text = value.text || text
       href = value.href
     }
     const attrs = { href, target: '_blank', rel: 'noopener noreferrer' }
