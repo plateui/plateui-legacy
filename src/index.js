@@ -1,3 +1,4 @@
+import './css/index.css'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import buildRoutes from './views'
@@ -9,14 +10,22 @@ Vue.use(VueRouter)
 Vue.use(components)
 
 Vue.config.productionTip = false
-Vue.prototype.$http = http
 
 export default {
   http,
   ready: false,
   app: null,
+  component (Comp) {
+    // register external components
+    if (/^(p|x)-/.test(Comp.name)) {
+      Vue.component(Comp.name, Comp)
+    } else {
+      Vue.component('x-' + Comp.name, Comp)
+    }
+  },
   async init (url) {
-    const { data } = await http.get(url)
+    Vue.prototype.$http = this.http
+    const { data } = await this.http.get(url)
     const routes = buildRoutes(data)
     const router = new VueRouter({ routes })
     const app = new Vue({

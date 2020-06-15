@@ -28,9 +28,9 @@
           "endpoint": "/routes/users.json"
         },
         {
-          "name": "Groups",
-          "path": "/groups",
-          "endpoint": "/routes/groups.json"
+          "name": "Stargazers",
+          "path": "/stargazers",
+          "endpoint": "/routes/stargazers.json"
         }
       ]
     },

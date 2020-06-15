@@ -23,25 +23,9 @@ body {
 }
 
 #app {
-  display: flex;
-  height: 100vh;
   font: 16px/1.42 var(--sys-sans), var(--en-sans), var(--zh-sans), sans-serif;
 }
-.app_side {
-  width: 260px;
-  flex-shrink: 0;
-  height: 100vh;
-  background: #fafafa;
-  box-sizing: border-box;
-  border-right: 1px solid rgba(0, 0, 0, 0.05);
-}
-.app_main {
-  flex-grow: 1;
-  overflow-y: auto;
-}
-.app_main .main {
-  padding: 1em;
-}
+
 .app_svgs {
   display: none;
 }

@@ -42,15 +42,15 @@ function renderViews (createElement, views) {
 function renderGroup (createElement, views, className) {
   let grid = false
   const components = {}
-  const cols = views.map(d => {
-    components[d.component] = true
+  const cols = views.map(view => {
+    components[view.component] = true
     const _classes = ['col']
-    if (d.grid) {
+    if (view.grid) {
       grid = true
-      _classes.push(`col_${d.grid}`)
+      _classes.push(`col_${view.grid}`)
     }
     return createElement('div', { class: _classes }, [
-      createElement('p-' + d.component, { props: d.data }),
+      createElement(componentName(view), { props: view.data }),
     ])
   })
   const classes = ['row', `row_${cols.length}`]
@@ -74,7 +74,14 @@ function renderItem (createElement, view) {
   if (view.views) {
     children.push(renderGroup(createElement, view.views))
   } else {
-    children.push(createElement('p-' + view.component, { props: view.data }))
+    children.push(createElement(componentName(view), { props: view.data }))
   }
   return createElement('section', { class: 'section' }, children)
+}
+
+function componentName (view) {
+  if (/^(p|x)-/.test(view.component)) {
+    return view.component
+  }
+  return 'p-' + view.component
 }

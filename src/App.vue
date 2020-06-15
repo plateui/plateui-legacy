@@ -1,7 +1,13 @@
 <template>
-<div id="app" :style="company.style">
+<div id="app" :style="company.style" :class="{_open: open}">
   <app-side :company="company" :menus="menus" />
   <div class="app_main">
+    <div class="app_head">
+      <button aria-label="Toggle Menu" @click.prevent="open=!open">
+        <svg-icon name="menu" />
+      </button>
+      <strong v-text="company.name"></strong>
+    </div>
     <router-view class="main" />
   </div>
 </div>
@@ -17,7 +23,10 @@ export default {
     company: Object,
     menus: Array,
   },
+  data () {
+    return {
+      open: false,
+    }
+  },
 }
 </script>
-
-<style src="./css/index.css"></style>

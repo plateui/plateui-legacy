@@ -1,7 +1,9 @@
-.table_content {
-  position: relative;
+.table {
   border-radius: 4px;
   box-shadow: var(--border-shadow);
+}
+.table_content {
+  position: relative;
   overflow: auto;
 }
 .table_content table {
@@ -14,7 +16,7 @@
   padding: 0.86em;
   font-size: 0.86em;
   font-weight: 500;
-  background: rgba(var(--color-rgb), 0.2);
+  background: rgba(0, 20, 80, 0.06);
 }
 .table_content td {
   padding: 0.64em;
@@ -25,6 +27,9 @@
 }
 .table_content td a:hover {
   color: rgba(var(--blue-rgb), 1);
+}
+.table_content tbody tr:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.02);
 }
 
 .th-sort {
@@ -75,10 +80,18 @@
 }
 
 .table_pagination {
-  padding: 0.8em 0 0;
+  border-top: 1px solid #f0f0f0;
+  padding: 0.8em 0.8em 0.6em;
   text-align: right;
 }
 
 .table_none {
   height: 200px;
+}
+
+@media (max-width: 420px) {
+  .table_pagination {
+    padding: 0.8em 0;
+    text-align: center;
+  }
 }

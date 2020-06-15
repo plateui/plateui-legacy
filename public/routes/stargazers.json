@@ -1,0 +1,46 @@
+{
+  "name": "Stargazers",
+  "views": [
+    {
+      "name": "Stargazers",
+      "component": "table-data",
+      "data": {
+        "columns": [
+          {
+            "name": "ID",
+            "type": "number",
+            "key": "id"
+          },
+          {
+            "name": "Avatar",
+            "type": "image",
+            "config": {
+              "style": {
+                "width": "42px",
+                "height": "42px",
+                "border-radius": "50%"
+              }
+            },
+            "key": "avatar_url"
+          },
+          {
+            "name": "Name",
+            "type": "string",
+            "key": "login"
+          },
+          {
+            "name": "URL",
+            "type": "link",
+            "key": "html_url"
+          },
+          {
+            "name": "Admin",
+            "type": "boolean",
+            "key": "site_admin"
+          }
+        ],
+        "endpoint": "https://api.github.com/repos/lepture/authlib/stargazers"
+      }
+    }
+  ]
+}

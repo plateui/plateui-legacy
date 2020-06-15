@@ -2,25 +2,23 @@
   "name": "Home",
   "views": [
     {
-      "name": "Users",
-      "views": [
-        {
-          "component": "count",
-          "data": {
-            "label": "Users",
-            "value": 1234,
-            "color": "green"
-          }
-        },
-        {
-          "component": "count",
-          "data": {
-            "label": "Groups",
-            "value": 1234,
-            "color": "purple"
-          }
-        }
-      ]
+      "name": "GitHub Stats",
+      "component": "count-stats",
+      "data": {
+        "columns": [
+          {
+            "label": "Repos",
+            "key": "public_repos"
+          },
+          {
+            "label": "Gists",
+            "key": "public_gists"
+          },
+          "followers",
+          "following"
+        ],
+        "endpoint": "/data/github-profile.json"
+      }
     },
     {
       "name": "Visits",

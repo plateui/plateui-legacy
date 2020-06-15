@@ -1,3 +1,4 @@
+import _get from 'lodash/get'
 import TableItem from './TableItem'
 
 const TableRow = {
@@ -8,7 +9,7 @@ const TableRow = {
   },
   render () {
     const children = this.columns.map(c => {
-      const value = this.item[c.key]
+      const value = _get(this.item, c.key)
       return (<TableItem type={c.type} config={c.config}
         value={value} item={this.item} />)
     })

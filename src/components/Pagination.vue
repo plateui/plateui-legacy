@@ -36,6 +36,7 @@ export default {
     page: Number,
     total: Number,
     perpage: Number,
+    last: Number,
     edge: {
       type: Number,
       default: 2,
@@ -43,7 +44,13 @@ export default {
   },
   computed: {
     pages () {
-      return parseInt((this.total - 1) / this.perpage, 10) + 1
+      if (this.last) {
+        return this.last
+      }
+      if (this.total && this.perpage) {
+        return parseInt((this.total - 1) / this.perpage, 10) + 1
+      }
+      return this.page
     },
     prevPage () {
       if (this.page > 1) {
@@ -121,6 +128,7 @@ export default {
   min-width: 24px;
   text-align: center;
   color: var(--text-hex);
+  margin: 0 0.2em;
 }
 .pagination li._active {
   color: rgb(var(--blue-rgb));
@@ -143,5 +151,16 @@ export default {
 }
 .pagination .edge {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@media (max-width: 420px) {
+  .pagination li {
+    margin: 0 0.1em;
+  }
+}
+@media (max-width: 380px) {
+  .pagination li {
+    font-size: 14px;
+    margin: 0;
+  }
 }
 </style>

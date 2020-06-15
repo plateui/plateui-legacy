@@ -1,4 +1,4 @@
-# plate-ui
+# Plate UI
 
 ## Project setup
 ```

@@ -24,10 +24,10 @@ export default {
         params.page = this.pagination.page
       }
       // TODO: order
-      const { data } = await this.$http.get(url, { params })
+      const { pagination, items } = await this.$http.paginate(url, params)
 
-      this.items = data.items
-      this.pagination = data.pagination
+      this.items = items
+      this.pagination = pagination
       this.loading = false
     },
     onOrder ({ key, order }) {

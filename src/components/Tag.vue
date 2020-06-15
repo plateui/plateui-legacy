@@ -40,8 +40,8 @@ export default {
   display: inline-block;
   padding: 0.1em 0.4em;
   border-radius: 4px;
-  border: 1px solid rgba(var(--color-rgb), 0.6);
-  background-color: rgba(var(--color-rgb), 0.4);
+  border: 1px solid rgba(var(--color-rgb), 0.4);
+  background-color: rgba(var(--color-rgb), 0.2);
   color: rgba(0, 0, 0, 0, 0.86);
   font-size: 0.8em;
 }
