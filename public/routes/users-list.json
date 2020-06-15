@@ -1,0 +1,51 @@
+{
+  "name": "Users",
+  "views": [
+    {
+      "name": "Users by List",
+      "component": "list-data",
+      "data": {
+        "media": {
+          "key": "avatar_url",
+          "config": {
+            "style": {
+              "width": "68px",
+              "height": "68px",
+              "border-radius": "5px"
+            },
+            "route": "UserView"
+          }
+        },
+        "title": {
+          "key": "name"
+        },
+        "subtitle": {
+          "key": "website",
+          "type": "link"
+        },
+        "information": [
+          {
+            "type": "datetime",
+            "key": "created_at",
+            "config": {
+              "format": "YYYY-MM-DD"
+            }
+          },
+          {
+            "type": "tag",
+            "key": "tags"
+          }
+        ],
+        "metadata": {
+          "key": "id",
+          "config": {
+            "style": {
+              "font-size": "1.4em"
+            }
+          }
+        },
+        "endpoint": "/data/users-list.json"
+      }
+    }
+  ]
+}

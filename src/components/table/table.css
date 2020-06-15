@@ -71,6 +71,11 @@
 .td-image img {
   vertical-align: middle;
 }
+.td-image .image {
+  display: inline-block;
+  vertical-align: middle;
+  background: rgba(0, 0, 0, 0.1);
+}
 .td-image a {
   text-decoration: none;
 }

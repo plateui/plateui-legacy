@@ -1,11 +1,15 @@
-import './table.css'
-import TableContent from './TableContent'
+import './list.css'
+import ListContent from './ListContent'
 import Pagination from '../Pagination'
 
 export default {
-  name: 'table-data',
+  name: 'list-data',
   props: {
-    columns: Array,
+    media: Object,
+    title: Object,
+    subtitle: Object,
+    information: Array,
+    metadata: Object,
     endpoint: String,
   },
   data () {
@@ -13,7 +17,6 @@ export default {
       loading: true,
       items: [],
       pagination: null,
-      orders: [],
     }
   },
   methods: {
@@ -24,28 +27,11 @@ export default {
       if (this.pagination) {
         params.page = this.pagination.page
       }
-      // TODO: order
       const { pagination, items } = await this.$http.paginate(url, params)
 
       this.items = items
       this.pagination = pagination
       this.loading = false
-    },
-    onOrder ({ key, order }) {
-      let found = false
-      this.orders = this.orders.map(o => {
-        if (o.key === key) {
-          found = true
-          o.order = order
-          return o
-        }
-        return o
-      })
-      if (!found) {
-        this.orders.push({ key, order })
-      }
-      this.$set(this.pagination, 'page', 1)
-      this.fetch()
     },
     onPage (page) {
       this.$set(this.pagination, 'page', page)
@@ -53,16 +39,17 @@ export default {
     },
   },
   render () {
-    return (<div class="table">
-      <div class="table_content">
-        <TableContent items={this.items} columns={this.columns}
-          onOrder={this.onOrder} />
-        { !this.items.length && <div class="table_none">
+    return (<div class="list">
+      <div class="list_content">
+        <ListContent items={this.items} media={this.media}
+          title={this.title} subtitle={this.subtitle}
+          information={this.information} metadata={this.metadata} />
+        { !this.items.length && <div class="list_none">
           { !this.loading && <p-empty /> }
         </div> }
         { this.loading && <p-spinner /> }
       </div>
-      { this.pagination && <div class="table_pagination">
+      { this.pagination && <div class="list_pagination">
         <Pagination { ...{ props: this.pagination } } onSelect={this.onPage} />
       </div> }
     </div>)

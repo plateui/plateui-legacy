@@ -1,4 +1,4 @@
-import renderItem from './renderItem'
+import renderValue from '../renderValue'
 
 export default {
   name: 'TableItem',
@@ -9,7 +9,7 @@ export default {
     value: [String, Boolean, Number, Array, Object],
   },
   render (h) {
-    let content = renderItem(h, this.type, this.value, this.config)
+    let content = renderValue(h, this.type, this.value, this.config)
     if (this.config && this.config.route) {
       const routeTo = {
         name: this.config.route,

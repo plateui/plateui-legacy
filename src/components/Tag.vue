@@ -1,5 +1,5 @@
 <template>
-<span class="tag" :class="classes" :style="style" v-text="text"></span>
+<span class="p-tag" :class="classes" :style="style" v-text="text"></span>
 </template>
 
 <script>
@@ -36,16 +36,16 @@ export default {
 </script>
 
 <style>
-.tag {
+.p-tag {
   display: inline-block;
   padding: 0.1em 0.4em;
   border-radius: 4px;
   border: 1px solid rgba(var(--color-rgb), 0.4);
   background-color: rgba(var(--color-rgb), 0.2);
-  color: rgba(0, 0, 0, 0, 0.86);
+  color: var(--text-hex);
   font-size: 0.8em;
 }
-.tag + .tag {
+.p-tag + .p-tag {
   margin-left: 0.2em;
 }
 </style>

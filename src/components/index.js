@@ -5,6 +5,7 @@ import Spinner from './Spinner'
 import Count from './count/Count'
 import CountStats from './count/CountStats'
 import TableData from './table/TableData'
+import ListData from './list/ListData'
 import Chart from './charts/Chart'
 import LineChart from './charts/LineChart'
 
@@ -15,6 +16,7 @@ const _COMPONENTS = [
   Count,
   CountStats,
   TableData,
+  ListData,
   Chart,
   LineChart,
 ]

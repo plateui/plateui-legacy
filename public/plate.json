@@ -25,7 +25,12 @@
         {
           "name": "Users",
           "path": "/users",
-          "endpoint": "/routes/users.json"
+          "endpoint": "/routes/users-table.json"
+        },
+        {
+          "name": "User List",
+          "path": "/users-list",
+          "endpoint": "/routes/users-list.json"
         },
         {
           "name": "Stargazers",

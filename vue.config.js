@@ -7,6 +7,13 @@ if (process.env.NODE_ENV === 'production') {
     devtool: false,
     externals: [
       {
+        moment: {
+          commonjs: 'moment',
+          commonjs2: 'moment',
+          root: 'moment',
+        },
+      },
+      {
         'chart.js': {
           commonjs: 'chart.js',
           commonjs2: 'chart.js',

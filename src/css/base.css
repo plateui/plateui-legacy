@@ -12,6 +12,10 @@
   --code-font: Menlo,Monaco,Consolas,"Courier New";
 
   --text-hex: #313132;
+  --title-hex: #212122;
+  --subtitle-hex: #686866;
+  --metadata-hex: #969699;
+
   --color-rgb: 220, 220, 220;
 
   --border-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
