@@ -21,26 +21,30 @@ const TableSort = {
   name: 'table-sort',
   props: {
     column: Object,
+    value: '',
   },
   data () {
     return {
-      orderBy: '',
+      orderType: this.value,
     }
   },
   methods: {
     onClick () {
-      if (this.orderBy === '') {
-        this.orderBy = 'desc'
-      } else if (this.orderBy === 'desc') {
-        this.orderBy = 'asc'
-      } else {
-        this.orderBy = ''
+      const types = ['desc', 'asc']
+      if (!this.value) {
+        types.push('')
       }
-      this.$emit('order', { key: this.column.key, order: this.orderBy })
+      const next = types.indexOf(this.orderType) + 1
+      if (next > types.length - 1) {
+        this.orderType = types[0]
+      } else {
+        this.orderType = types[next]
+      }
+      this.$emit('order', { key: this.column.key, type: this.orderType })
     },
   },
   render () {
-    return (<div class="th-sort" data-order={this.orderBy} onClick={this.onClick}>
+    return (<div class="th-sort" data-order={this.orderType} onClick={this.onClick}>
       <span>{this.column.name}</span>
       <span class="th-sort_arrow">
         <svg-icon name="chevron-up" />
@@ -65,7 +69,8 @@ export default {
     const cols = this.columns.map(c => {
       const config = c.config
       if (config && config.sortable) {
-        return (<th><TableSort column={c} onOrder={this.onOrder} /></th>)
+        const value = config.orderType || ''
+        return (<th><TableSort column={c} value={value} onOrder={this.onOrder} /></th>)
       } else {
         return (<th>{c.name}</th>)
       }

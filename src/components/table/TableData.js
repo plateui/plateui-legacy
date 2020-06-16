@@ -32,25 +32,34 @@ export default {
       if (this.pagination) {
         params.page = this.pagination.page
       }
-      // TODO: order
+      const order = this.orders.map(d => {
+        if (d.type === 'desc') {
+          return `-${d.key}`
+        } else if (d.type === 'asc') {
+          return d.key
+        }
+      }).join(',')
+      if (order) {
+        params.order = order
+      }
       const { pagination, items } = await this.$http.paginate(url, params)
 
       this.items = items
       this.pagination = pagination
       this.loading = false
     },
-    onOrder ({ key, order }) {
+    onOrder ({ key, type }) {
       let found = false
       this.orders = this.orders.map(o => {
         if (o.key === key) {
           found = true
-          o.order = order
+          o.type = type
           return o
         }
         return o
       })
       if (!found) {
-        this.orders.push({ key, order })
+        this.orders.push({ key, type })
       }
       this.$set(this.pagination, 'page', 1)
       this.fetch()

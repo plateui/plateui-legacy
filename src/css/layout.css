@@ -13,6 +13,7 @@
 
 .app_main {
   padding-left: 260px;
+  min-height: 100vh;
   box-sizing: border-box;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
