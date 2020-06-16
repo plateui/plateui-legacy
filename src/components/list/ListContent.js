@@ -24,6 +24,11 @@ const ListRow = {
           params: this.item,
         }
         return (<router-link to={routeTo}>{content}</router-link>)
+      } else if (prop.config && prop.config.href) {
+        const href = _get(this.item, prop.config.href)
+        if (href) {
+          return (<a href={href} target='_blank' rel='noopener noreferrer'>{content}</a>)
+        }
       }
       return content
     }

@@ -19,28 +19,39 @@
       ]
     },
     {
-      "icon": "user",
-      "name": "Account",
+      "icon": "github",
+      "name": "GitHub",
       "routes": [
         {
-          "name": "Users",
-          "path": "/users",
-          "endpoint": "/routes/users-table.json"
+          "name": "GitHub Profile",
+          "path": "/github/lepture",
+          "endpoint": "/routes/github-profile.json"
         },
         {
-          "name": "User List",
-          "path": "/users-list",
-          "endpoint": "/routes/users-list.json"
-        },
-        {
-          "name": "Stargazers",
-          "path": "/stargazers",
-          "endpoint": "/routes/stargazers.json"
+          "name": "Authlib Stargazers",
+          "path": "/github/stargazers",
+          "endpoint": "/routes/github-stargazers.json"
         }
       ]
     },
     {
-      "icon": "file",
+      "icon": "user",
+      "name": "Account",
+      "routes": [
+        {
+          "name": "Users by Table",
+          "path": "/users/table",
+          "endpoint": "/routes/users-table.json"
+        },
+        {
+          "name": "Users by List",
+          "path": "/users/list",
+          "endpoint": "/routes/users-list.json"
+        }
+      ]
+    },
+    {
+      "icon": "file-text",
       "name": "Posts",
       "routes": [
         {
@@ -55,7 +66,7 @@
     {
       "name": "UserView",
       "path": "/users/:id",
-      "endpoint": "/routes/users-:id.json"
+      "endpoint": "/routes/users/:id.json"
     }
   ]
 }

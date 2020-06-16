@@ -44,7 +44,10 @@
           }
         },
         "title": {
-          "key": "title"
+          "key": "title",
+          "config": {
+            "href": "url"
+          }
         },
         "subtitle": {
           "key": "subtitle"
@@ -52,13 +55,6 @@
         "information": [
           {
             "key": "status"
-          },
-          {
-            "key": "url",
-            "type": "link",
-            "config": {
-              "text": "Link"
-            }
           },
           {
             "key": "template"

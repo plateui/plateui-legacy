@@ -2,6 +2,13 @@
   "name": "Users",
   "views": [
     {
+      "name": "Registration",
+      "component": "line-chart",
+      "data": {
+        "endpoint": "/metrics/users.json"
+      }
+    },
+    {
       "name": "Users by List",
       "component": "list-data",
       "data": {

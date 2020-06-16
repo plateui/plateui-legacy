@@ -40,6 +40,10 @@
   font-size: 1.2em;
   color: var(--title-hex);
 }
+.list_content .list_title a {
+  color: var(--title-hex);
+}
+
 .list_content .list_subtitle {
   margin: 0 0 6px;
   font-size: 1em;

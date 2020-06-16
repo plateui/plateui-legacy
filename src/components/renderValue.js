@@ -76,7 +76,7 @@ export default function (h, type, value, config) {
   const style = options.style
   if (components[type]) {
     return components[type](h, value, options)
-  } else if (value) {
+  } else if (value !== undefined) {
     return h('span', { style }, [value])
   } else {
     return h('span', { style, attrs: { class: 'no-value' } }, ['-'])

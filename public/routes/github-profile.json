@@ -1,0 +1,85 @@
+{
+  "name": "GitHub Profile",
+  "views": [
+    {
+      "name": "GitHub Stats",
+      "component": "count-stats",
+      "data": {
+        "columns": [
+          {
+            "label": "Repos",
+            "key": "public_repos"
+          },
+          {
+            "label": "Gists",
+            "key": "public_gists"
+          },
+          "followers",
+          "following"
+        ],
+        "endpoint": "/data/github-lepture.json"
+      }
+    },
+    {
+      "name": "Starred Projects",
+      "component": "table-data",
+      "data": {
+        "endpoint": "https://api.github.com/users/lepture/starred",
+        "columns": [
+          {
+            "key": "id",
+            "name": "ID"
+          },
+          {
+            "key": "name",
+            "name": "Repo",
+            "config": {
+              "href": "html_url"
+            }
+          },
+          {
+            "key": "owner.avatar_url",
+            "name": "Owner",
+            "type": "image",
+            "config": {
+              "style": {
+                "width": "36px",
+                "height": "36px",
+                "border-radius": "50%"
+              },
+              "href": "owner.html_url"
+            }
+          },
+          {
+            "key": "stargazers_count",
+            "name": "Stars",
+            "type": "number"
+          },
+          {
+            "key": "forks_count",
+            "name": "Forks",
+            "type": "number"
+          },
+          {
+            "key": "watchers_count",
+            "name": "Watchers",
+            "type": "number"
+          },
+          {
+            "key": "open_issues_count",
+            "name": "Issues",
+            "type": "number"
+          },
+          {
+            "key": "updated_at",
+            "name": "Updated",
+            "type": "datetime",
+            "config": {
+              "format": "YYYY-MM-DD"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

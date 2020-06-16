@@ -17,14 +17,14 @@
           "followers",
           "following"
         ],
-        "endpoint": "/data/github-profile.json"
+        "endpoint": "/data/github-lepture.json"
       }
     },
     {
       "name": "Visits",
       "component": "line-chart",
       "data": {
-        "endpoint": "/data/visit-metrics.json"
+        "endpoint": "/metrics/visits.json"
       }
     }
   ]
