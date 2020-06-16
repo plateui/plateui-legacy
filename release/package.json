@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lepture/plateui.git"
+    "url": "git+https://github.com/plateui/plate.git"
   },
-  "homepage": "https://github.com/lepture/plateui"
+  "homepage": "https://github.com/plateui/plate"
 }

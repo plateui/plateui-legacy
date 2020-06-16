@@ -98,7 +98,7 @@
             "key": "created_at"
           }
         ],
-        "endpoint": "/data/users-list.json"
+        "endpoint": "/demo/data/users-list.json"
       }
     }
   ]

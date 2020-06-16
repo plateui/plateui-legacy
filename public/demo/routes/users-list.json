@@ -5,7 +5,7 @@
       "name": "Registration",
       "component": "line-chart",
       "data": {
-        "endpoint": "/metrics/users.json"
+        "endpoint": "/demo/metrics/users.json"
       }
     },
     {
@@ -51,7 +51,7 @@
             }
           }
         },
-        "endpoint": "/data/users-list.json"
+        "endpoint": "/demo/data/users-list.json"
       }
     }
   ]
