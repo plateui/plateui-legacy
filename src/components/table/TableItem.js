@@ -11,13 +11,10 @@ export default {
   render (h) {
     let content = renderValue(h, this.type, this.value, this.config)
     if (this.config && this.config.route) {
-      const routeTo = {
-        name: this.config.route,
-        params: this.item,
-      }
+      const routeTo = Object.assign({ params: this.item }, this.config.route)
       content = (<router-link to={routeTo}>{content}</router-link>)
     }
-    const className = 'td-' + this.type
+    const className = 'td-' + (this.type || 'none')
     return (<td class={className}>{content}</td>)
   },
 }

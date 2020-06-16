@@ -2,6 +2,9 @@ import plate from './index'
 
 window.plate = plate
 
-plate.init('/plate.json').then(app => {
+const endpoint = '/plate.json'
+// const endpoint = '/api/_plate/_/main'
+
+plate.init(endpoint).then(app => {
   app.$mount('#app')
 })

@@ -19,6 +19,14 @@ export default {
     columns: Array,
     endpoint: String,
   },
+  watch: {
+    endpoint: {
+      immediate: true,
+      handler () {
+        this.fetch()
+      },
+    },
+  },
   data () {
     return {
       item: null,
@@ -55,9 +63,6 @@ export default {
       const { data } = await this.$http.get(this.endpoint)
       this.item = data
     },
-  },
-  created () {
-    this.fetch()
   },
 }
 </script>

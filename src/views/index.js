@@ -7,9 +7,11 @@ export default function (data) {
       routes.push(genRoute(r))
     })
   })
-  data.routes.forEach(r => {
-    routes.push(genRoute(r))
-  })
+  if (data.routes) {
+    data.routes.forEach(r => {
+      routes.push(genRoute(r))
+    })
+  }
   return routes
 }
 

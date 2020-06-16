@@ -1,0 +1,11 @@
+{
+  "name": "plateui",
+  "version": "0.1.0",
+  "author": "Hsiaoming Yang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lepture/plateui.git"
+  },
+  "homepage": "https://github.com/lepture/plateui"
+}

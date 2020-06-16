@@ -8,6 +8,14 @@ export default {
     columns: Array,
     endpoint: String,
   },
+  watch: {
+    endpoint: {
+      immediate: true,
+      handler () {
+        this.fetch()
+      },
+    },
+  },
   data () {
     return {
       loading: true,
@@ -66,8 +74,5 @@ export default {
         <Pagination { ...{ props: this.pagination } } onSelect={this.onPage} />
       </div> }
     </div>)
-  },
-  created () {
-    this.fetch()
   },
 }

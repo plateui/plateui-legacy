@@ -15,7 +15,10 @@ export default {
       if (typeof this.value === 'string') {
         return this.value
       }
-      return this.value.text
+      if (this.value) {
+        return this.value.text
+      }
+      return ''
     },
     classes () {
       const color = this.value.color

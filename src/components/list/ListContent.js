@@ -5,14 +5,17 @@ const ListRow = {
   name: 'ListRow',
   props: {
     media: Object,
-    title: Object,
-    subtitle: Object,
+    title: [String, Object],
+    subtitle: [String, Object],
     information: Array,
-    metadata: Object,
+    metadata: [String, Object],
     item: Object,
   },
   render (h) {
     const propElement = (prop, type) => {
+      if (typeof prop === 'string') {
+        prop = { key: prop }
+      }
       const value = _get(this.item, prop.key)
       const content = renderValue(h, type || prop.type, value, prop.config)
       if (prop.config && prop.config.route) {
@@ -34,12 +37,12 @@ const ListRow = {
     }
 
     const content = []
-    if (this.title && this.title.key) {
+    if (this.title) {
       content.push(<h3 class="list_title">
         {propElement(this.title)}
       </h3>)
     }
-    if (this.subtitle && this.subtitle.key) {
+    if (this.subtitle) {
       content.push(<h4 class="list_subtitle">
         {propElement(this.subtitle)}
       </h4>)
@@ -54,7 +57,7 @@ const ListRow = {
       })
       content.push(<div class="list_info">{infoChildren}</div>)
     }
-    if (this.metadata && this.metadata.key) {
+    if (this.metadata) {
       children.push(<div class="list_main">
         <div class="list_content">{content}</div>
         <div class="list_meta">{propElement(this.metadata)}</div>
@@ -72,10 +75,10 @@ export default {
   name: 'list-content',
   props: {
     media: Object,
-    title: Object,
-    subtitle: Object,
+    title: [String, Object],
+    subtitle: [String, Object],
     information: Array,
-    metadata: Object,
+    metadata: [String, Object],
     items: Array,
   },
   render () {

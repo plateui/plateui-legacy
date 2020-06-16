@@ -1,11 +1,8 @@
-#app {
-  display: flex;
-  height: 100vh;
-}
-
 .app_side {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 260px;
-  flex-shrink: 0;
   height: 100vh;
   background: #fafafa;
   box-sizing: border-box;
@@ -13,8 +10,9 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+
 .app_main {
-  flex-grow: 1;
+  padding-left: 260px;
   box-sizing: border-box;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -41,20 +39,10 @@ h1.section_title {
 
 @media (max-width: 960px) {
   #app {
-    display: block;
-  }
-  .app_side {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
+    overflow: hidden;
   }
   .app_main {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    padding-left: 0;
     background-color: #fff;
     transition: transform 0.2s ease;
     will-change: transform;

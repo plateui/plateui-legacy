@@ -41,6 +41,14 @@ export default {
       hidden: [],
     }
   },
+  watch: {
+    endpoint: {
+      immediate: true,
+      handler () {
+        this.fetch()
+      },
+    },
+  },
   methods: {
     sum (data) {
       return data.reduce((a, c) => a + c, 0)
@@ -69,9 +77,6 @@ export default {
       this.hidden = datasets.map(() => false)
       this.loading = false
     },
-  },
-  created () {
-    this.fetch()
   },
 }
 </script>

@@ -33,6 +33,14 @@ if (process.env.NODE_ENV === 'production') {
       libraryExport: 'default',
     },
   }
+} else if (process.env.DEV_ADMIN) {
+  const TARGET = process.env.API_TARGET || 'http://127.0.0.1:5100'
+  vueConfig.devServer = {
+    disableHostCheck: true,
+    proxy: {
+      '/api/_plate/': { target: TARGET },
+    },
+  }
 }
 
 module.exports = vueConfig

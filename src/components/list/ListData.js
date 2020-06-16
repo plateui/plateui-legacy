@@ -6,11 +6,19 @@ export default {
   name: 'list-data',
   props: {
     media: Object,
-    title: Object,
-    subtitle: Object,
+    title: [String, Object],
+    subtitle: [String, Object],
     information: Array,
-    metadata: Object,
+    metadata: [String, Object],
     endpoint: String,
+  },
+  watch: {
+    endpoint: {
+      immediate: true,
+      handler () {
+        this.fetch()
+      },
+    },
   },
   data () {
     return {
@@ -53,8 +61,5 @@ export default {
         <Pagination { ...{ props: this.pagination } } onSelect={this.onPage} />
       </div> }
     </div>)
-  },
-  created () {
-    this.fetch()
   },
 }

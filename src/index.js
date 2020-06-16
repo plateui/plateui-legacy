@@ -23,7 +23,7 @@ export default {
       Vue.component('x-' + Comp.name, Comp)
     }
   },
-  async init (url) {
+  async init (url, el) {
     Vue.prototype.$http = this.http
     const { data } = await this.http.get(url)
     const routes = buildRoutes(data)
@@ -34,6 +34,9 @@ export default {
     })
     this.ready = true
     this.app = app
+    if (el) {
+      app.$mount(el)
+    }
     return app
   },
 }
