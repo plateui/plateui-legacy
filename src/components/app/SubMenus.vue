@@ -14,14 +14,16 @@
 </template>
 
 <script>
+import _find from 'lodash/find'
+
 export default {
   props: {
     menu: Object,
   },
   data () {
-    return {
-      collapse: true,
-    }
+    const route = _find(this.menu.routes, { path: this.$route.path })
+    const collapse = !route
+    return { collapse }
   },
 }
 </script>

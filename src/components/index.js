@@ -5,6 +5,7 @@ import Count from './count/Count'
 import CountStats from './count/CountStats'
 import TableData from './table/TableData'
 import ListData from './list/ListData'
+import Content from './display/Content'
 import Chart from './charts/Chart'
 import LineChart from './charts/LineChart'
 
@@ -13,6 +14,7 @@ const _COMPONENTS = [
   CountStats,
   TableData,
   ListData,
+  Content,
   Chart,
   LineChart,
 ]
@@ -23,7 +25,11 @@ function install (Vue) {
   Vue.component(Spinner.name, Spinner)
   Vue.component(Empty.name, Empty)
   _COMPONENTS.forEach(C => {
-    Vue.component('p-' + C.name, C)
+    if (/^p-/.test(C.name)) {
+      Vue.component(C.name, C)
+    } else {
+      Vue.component('p-' + C.name, C)
+    }
   })
 }
 

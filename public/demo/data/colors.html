@@ -1,0 +1,26 @@
+<style>
+  .demo-colors {
+    display: flex;
+    justify-content: space-between;
+  }
+  .demo-colors > div {
+    flex-basis: 20%;
+    padding: 20px;
+    margin: 5px;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+  }
+</style>
+
+<h3>RGB Colors</h3>
+<pre><code>.class { color: rgb(var(--purple-rgb)); }</code></pre>
+<div class="demo-colors">
+<div style="background:rgb(var(--blue-rgb))">--blue-rgb</div>
+<div style="background:rgb(var(--red-rgb))">--red-rgb</div>
+<div style="background:rgb(var(--green-rgb))">--green-rgb</div>
+<div style="background:rgb(var(--yellow-rgb))">--yellow-rgb</div>
+<div style="background:rgb(var(--purple-rgb))">--purple-rgb</div>
+</div>
+
+<h3>Text Colors</h3>

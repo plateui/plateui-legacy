@@ -72,6 +72,9 @@ function renderItem (createElement, view) {
   if (view.name) {
     children.push(createElement('h1', { class: 'section_title' }, [view.name]))
   }
+  if (view.summary) {
+    children.push(createElement('p', { class: 'section_summary' }, [view.summary]))
+  }
   if (view.views) {
     children.push(renderGroup(createElement, view.views))
   } else {

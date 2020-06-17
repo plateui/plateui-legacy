@@ -1,4 +1,12 @@
 {
-  "name": "Typography",
-  "views": []
+  "name": "Components",
+  "views": [{
+    "name": "Typography",
+    "component": "content",
+    "data": {
+      "type": "text/html",
+      "box": true,
+      "endpoint": "/demo/data/typography.html"
+    }
+  }]
 }
