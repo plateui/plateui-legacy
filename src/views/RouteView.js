@@ -23,6 +23,7 @@ export default {
         const { data } = await http.get(endpoint)
         this.name = data.name
         this.views = data.views
+        this.$emit('load', data)
         this.loading = false
       },
     },

@@ -16,10 +16,10 @@
         </div>
       </template>
     </p-chart>
-    <p-empty v-else />
+    <empty v-else />
   </div>
   <div class="chart_spinner" v-else style="height:20em">
-    <p-spinner />
+    <spinner />
   </div>
 </div>
 </template>
@@ -96,11 +96,11 @@ export default {
   cursor: pointer;
 }
 .chart_stat + .chart_stat {
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid var(--border-hex);
 }
 .chart_stat > div {
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.56);
+  color: var(--subtitle-hex);
   text-transform: capitalize;
 }
 .chart_stat > strong {

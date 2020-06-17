@@ -1,0 +1,12 @@
+{
+  "name": "Charts",
+  "views": [
+    {
+      "name": "Line Chart",
+      "component": "line-chart",
+      "data": {
+        "endpoint": "/demo/metrics/visits.json"
+      }
+    }
+  ]
+}

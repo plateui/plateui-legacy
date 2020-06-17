@@ -1,6 +1,6 @@
 import moment from 'moment'
-import Tag from './Tag'
-import Audio from './Audio'
+import Tag from './fragments/Tag'
+import Audio from './fragments/Audio'
 
 const components = {
   image (h, value, { style }) {

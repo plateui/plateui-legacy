@@ -87,7 +87,7 @@
 }
 
 .table_pagination {
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-hex);
 }
 
 .table_pagination > .pagination {

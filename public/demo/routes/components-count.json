@@ -1,0 +1,56 @@
+{
+  "name": "Count Component",
+  "views": [
+    {
+      "name": "<count>",
+      "views": [
+        {
+          "component": "count",
+          "data": {
+            "label": "Total",
+            "color": "purple",
+            "value": 9920,
+            "summary": "100%"
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Published",
+            "color": "green",
+            "value": 8610,
+            "summary": "87%"
+          }
+        },
+        {
+          "component": "count",
+          "data": {
+            "label": "Draft",
+            "color": "yellow",
+            "value": 1310,
+            "summary": "13%"
+          }
+        }
+      ]
+    },
+    {
+      "name": "<count-stats>",
+      "component": "count-stats",
+      "data": {
+        "columns": [
+          {
+            "label": "Repos",
+            "key": "public_repos"
+          },
+          {
+            "label": "Gists",
+            "key": "public_gists"
+          },
+          "followers",
+          "following"
+        ],
+        "endpoint": "/demo/data/github-lepture.json"
+      }
+    }
+  ]
+}

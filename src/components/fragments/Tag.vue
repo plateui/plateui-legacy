@@ -30,7 +30,7 @@ export default {
     style () {
       const color = this.value.color
       if (color && isColor(color)) {
-        return { '--color-rgb': hex2rgb(color) }
+        return { '--using-rgb': hex2rgb(color) }
       }
       return ''
     },
@@ -43,8 +43,8 @@ export default {
   display: inline-block;
   padding: 0.1em 0.4em;
   border-radius: 4px;
-  border: 1px solid rgba(var(--color-rgb), 0.4);
-  background-color: rgba(var(--color-rgb), 0.2);
+  border: 1px solid rgba(var(--using-rgb), 0.4);
+  background-color: rgba(var(--using-rgb), 0.2);
   color: var(--text-hex);
   font-size: 0.8em;
 }

@@ -27,10 +27,7 @@
 </template>
 
 <script>
-import SvgIcon from './icons/SvgIcon'
-
 export default {
-  components: { SvgIcon },
   name: 'pagination',
   props: {
     page: Number,

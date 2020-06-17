@@ -1,5 +1,5 @@
 {
-  "name": "Users",
+  "name": "User Table",
   "views": [
     {
       "name": "Overview",

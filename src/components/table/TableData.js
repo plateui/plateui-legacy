@@ -1,6 +1,6 @@
 import './table.css'
 import TableContent from './TableContent'
-import Pagination from '../Pagination'
+import Pagination from '../fragments/Pagination'
 
 export default {
   name: 'table-data',
@@ -12,6 +12,8 @@ export default {
     endpoint: {
       immediate: true,
       handler () {
+        this.pagination = null
+        this.items = []
         this.fetch()
       },
     },
@@ -75,9 +77,9 @@ export default {
         <TableContent items={this.items} columns={this.columns}
           onOrder={this.onOrder} />
         { !this.items.length && <div class="table_none">
-          { !this.loading && <p-empty /> }
+          { !this.loading && <empty /> }
         </div> }
-        { this.loading && <p-spinner /> }
+        { this.loading && <spinner /> }
       </div>
       { this.pagination && <div class="table_pagination">
         <Pagination { ...{ props: this.pagination } } onSelect={this.onPage} />

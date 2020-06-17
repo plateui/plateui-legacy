@@ -1,4 +1,5 @@
 {
+  "name": "Post List",
   "views": [
     {
       "name": "Stats",

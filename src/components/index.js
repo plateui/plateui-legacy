@@ -1,7 +1,6 @@
 import icons from './icons'
-import Tag from './Tag'
-import Empty from './Empty'
-import Spinner from './Spinner'
+import Empty from './fragments/Empty'
+import Spinner from './fragments/Spinner'
 import Count from './count/Count'
 import CountStats from './count/CountStats'
 import TableData from './table/TableData'
@@ -10,9 +9,6 @@ import Chart from './charts/Chart'
 import LineChart from './charts/LineChart'
 
 const _COMPONENTS = [
-  Tag,
-  Empty,
-  Spinner,
   Count,
   CountStats,
   TableData,
@@ -23,6 +19,9 @@ const _COMPONENTS = [
 
 function install (Vue) {
   Vue.use(icons)
+  // fragments can not be used by views
+  Vue.component(Spinner.name, Spinner)
+  Vue.component(Empty.name, Empty)
   _COMPONENTS.forEach(C => {
     Vue.component('p-' + C.name, C)
   })

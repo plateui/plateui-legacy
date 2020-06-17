@@ -26,7 +26,7 @@ export default {
     },
     style () {
       if (this.color && isColor(this.color)) {
-        return { '--color-rgb': hex2rgb(this.color) }
+        return { '--using-rgb': hex2rgb(this.color) }
       }
       return ''
     },
@@ -41,7 +41,7 @@ export default {
   text-align: center;
   border-radius: 8px;
   box-shadow: var(--border-shadow);
-  border-top: 4px solid rgba(var(--color-rgb, 0.6));
+  border-top: 4px solid rgba(var(--using-rgb, 0.6));
   box-sizing: border-box;
 }
 .col .count {
@@ -52,7 +52,7 @@ export default {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
-  color:rgba(0, 0, 0, 0.6);
+  color: var(--subtitle-hex);
 }
 .count_num {
   margin: 10px 0;
@@ -61,6 +61,6 @@ export default {
   color: var(--text-hex);
 }
 .count_sum {
-  color:rgba(0, 0, 0, 0.4);
+  color: var(--metadata-hex);
 }
 </style>

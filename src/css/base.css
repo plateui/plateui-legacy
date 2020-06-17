@@ -1,10 +1,12 @@
 :root {
-  --primary-rgb: 66, 185, 131;
   --blue-rgb: 17, 163, 231;
   --red-rgb: 226, 129, 149;
   --green-rgb: 115, 193, 149;
   --yellow-rgb: 255, 189, 68;
   --purple-rgb: 166, 134, 220;
+
+  --primary-rgb: var(--blue-rgb);
+  --using-rgb: 220, 220, 220;
 
   --sys-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell;
   --en-sans: 'Helvetica Neue';
@@ -15,8 +17,7 @@
   --title-hex: #212122;
   --subtitle-hex: #686866;
   --metadata-hex: #969699;
-
-  --color-rgb: 220, 220, 220;
+  --border-hex: #efefef;
 
   --border-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 }
@@ -35,17 +36,17 @@ body {
 }
 
 .blue {
-  --color-rgb: var(--blue-rgb);
+  --using-rgb: var(--blue-rgb);
 }
 .red {
-  --color-rgb: var(--red-rgb);
+  --using-rgb: var(--red-rgb);
 }
 .green {
-  --color-rgb: var(--green-rgb);
+  --using-rgb: var(--green-rgb);
 }
 .yellow {
-  --color-rgb: var(--yellow-rgb);
+  --using-rgb: var(--yellow-rgb);
 }
 .purple {
-  --color-rgb: var(--purple-rgb);
+  --using-rgb: var(--purple-rgb);
 }

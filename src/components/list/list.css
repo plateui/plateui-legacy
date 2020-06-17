@@ -25,7 +25,7 @@
   flex-grow: 1;
   display: flex;
   overflow: hidden;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-hex);
   padding: 1em 0;
 }
 .list_content {

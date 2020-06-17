@@ -1,6 +1,6 @@
 import './list.css'
 import ListContent from './ListContent'
-import Pagination from '../Pagination'
+import Pagination from '../fragments/Pagination'
 
 export default {
   name: 'list-data',
@@ -16,6 +16,8 @@ export default {
     endpoint: {
       immediate: true,
       handler () {
+        this.pagination = null
+        this.items = []
         this.fetch()
       },
     },
@@ -53,9 +55,9 @@ export default {
           title={this.title} subtitle={this.subtitle}
           information={this.information} metadata={this.metadata} />
         { !this.items.length && <div class="list_none">
-          { !this.loading && <p-empty /> }
+          { !this.loading && <empty /> }
         </div> }
-        { this.loading && <p-spinner /> }
+        { this.loading && <spinner /> }
       </div>
       { this.pagination && <div class="list_pagination">
         <Pagination { ...{ props: this.pagination } } onSelect={this.onPage} />

@@ -1,7 +1,7 @@
 <template>
-<svg class="svg-icon" :class="name"
+<svg class="svg-icon" :class="className"
   :aria-label="ariaLabel" :aria-hidden="!ariaLabel">
-  <use :xlink:href="href"/>
+  <use :href="href"/>
 </svg>
 </template>
 
@@ -15,7 +15,19 @@ export default {
   },
   computed: {
     href () {
-      return '#' + this.name
+      if (this.name.indexOf('#') === -1) {
+        return '#' + this.name
+      } else {
+        return this.name
+      }
+    },
+    className () {
+      const parts = this.name.split('#')
+      if (parts.length === 1) {
+        return this.name
+      } else {
+        return parts[1]
+      }
     },
   },
 }
