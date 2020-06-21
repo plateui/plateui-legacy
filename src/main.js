@@ -1,4 +1,7 @@
 import plate from './index'
+import demo from './demo'
+
+demo(plate)
 
 window.plate = plate
 

@@ -1,4 +1,10 @@
 {
   "name": "Icons",
-  "views": []
+  "views": [
+    {
+      "name": "Feather Icons",
+      "summary": "Plate UI has built-in feather icons.",
+      "component": "x-icon-grid"
+    }
+  ]
 }
