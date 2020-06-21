@@ -8,6 +8,7 @@ import ListData from './list/ListData'
 import Content from './display/Content'
 import Chart from './charts/Chart'
 import LineChart from './charts/LineChart'
+import LineChartData from './charts/LineChartData'
 
 const _COMPONENTS = [
   Count,
@@ -17,6 +18,7 @@ const _COMPONENTS = [
   Content,
   Chart,
   LineChart,
+  LineChartData,
 ]
 
 function install (Vue) {

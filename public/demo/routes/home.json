@@ -22,7 +22,7 @@
     },
     {
       "name": "Visits",
-      "component": "line-chart",
+      "component": "line-chart-data",
       "data": {
         "endpoint": "/demo/metrics/visits.json"
       }

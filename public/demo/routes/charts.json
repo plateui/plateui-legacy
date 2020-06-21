@@ -3,7 +3,7 @@
   "views": [
     {
       "name": "Line Chart",
-      "component": "line-chart",
+      "component": "line-chart-data",
       "data": {
         "endpoint": "/demo/metrics/visits.json"
       }

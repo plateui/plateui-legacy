@@ -25,29 +25,20 @@
 </template>
 
 <script>
-import { genLineOptions, formatArrayData } from './util'
-
 export default {
   name: 'line-chart',
   props: {
-    endpoint: String,
+    loading: {
+      type: Boolean,
+      default: false,
+    },
+    datasets: Array,
+    labels: Array,
+    options: Object,
   },
   data () {
-    return {
-      loading: true,
-      options: null,
-      datasets: [],
-      labels: [],
-      hidden: [],
-    }
-  },
-  watch: {
-    endpoint: {
-      immediate: true,
-      handler () {
-        this.fetch()
-      },
-    },
+    const hidden = this.datasets.map(() => false)
+    return { hidden }
   },
   methods: {
     sum (data) {
@@ -62,20 +53,6 @@ export default {
       }
       this.$set(this.hidden, index, meta.hidden)
       chart.update()
-    },
-    async fetch () {
-      this.loading = true
-      const url = this.endpoint
-      const { data } = await this.$http.get(url)
-      const { labels, datasets } = formatArrayData(data)
-      this.labels = labels
-      this.datasets = datasets
-      if (this.datasets.length) {
-        const datalen = this.datasets[0].data.length
-        this.options = genLineOptions(datalen)
-      }
-      this.hidden = datasets.map(() => false)
-      this.loading = false
     },
   },
 }
