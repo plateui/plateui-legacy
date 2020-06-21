@@ -8,12 +8,13 @@
 
 <script>
 import _get from 'lodash/get'
-import Count from './Count'
+import http from '@/services/http'
 import { wordColor } from '@/services/color'
+import Count from './Count'
 const COLORS = ['blue', 'red', 'green', 'yellow', 'purple']
 
 export default {
-  name: 'count-stats',
+  name: 'counts-data',
   components: { Count },
   props: {
     columns: Array,
@@ -60,7 +61,7 @@ export default {
   },
   methods: {
     async fetch () {
-      const { data } = await this.$http.get(this.endpoint)
+      const { data } = await http.get(this.endpoint)
       this.item = data
     },
   },

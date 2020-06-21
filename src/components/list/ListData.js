@@ -1,4 +1,5 @@
 import './list.css'
+import http from '@/services/http'
 import ListContent from './ListContent'
 import Pagination from '../fragments/Pagination'
 
@@ -37,7 +38,7 @@ export default {
       if (this.pagination) {
         params.page = this.pagination.page
       }
-      const { pagination, items } = await this.$http.paginate(url, params)
+      const { pagination, items } = await http.paginate(url, params)
 
       this.items = items
       this.pagination = pagination

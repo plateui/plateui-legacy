@@ -12,14 +12,7 @@ export default {
       default: 'text/html',
     },
     box: Boolean,
-    value: [String, Object, Array],
-    endpoint: String,
-  },
-  data () {
-    return {
-      text: this.value || '',
-      ct: this.type,
-    }
+    text: [String, Object, Array],
   },
   computed: {
     html () {
@@ -27,37 +20,17 @@ export default {
       if (typeof this.text !== 'string') {
         const code = JSON.stringify(this.text, null, 2)
         return '<pre class="language-json"><code>' + code + '</code></pre>'
-      } else if (/json/.test(this.ct)) {
+      } else if (/json/.test(this.type)) {
         const code = JSON.stringify(JSON.parse(this.text), null, 2)
         return '<pre class="language-json"><code>' + code + '</code></pre>'
       }
 
       // TODO: add a hook to process other types of content
-      if (this.ct === 'text/html') {
+      if (this.type === 'text/html') {
         return this.text
       } else {
         return '<pre><code>' + this.text + '</code></pre>'
       }
-    },
-  },
-  watch: {
-    endpoint: {
-      immediate: true,
-      handler (url) {
-        if (url) {
-          this.fetch(url)
-        }
-      },
-    },
-  },
-  methods: {
-    async fetch (url) {
-      const xhr = await this.$http.get(url)
-      const ct = xhr.getResponseHeader('Content-Type')
-      if (ct) {
-        this.ct = ct.split(';')[0].trim()
-      }
-      this.text = xhr.responseText
     },
   },
 }

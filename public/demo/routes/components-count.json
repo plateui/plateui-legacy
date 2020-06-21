@@ -34,8 +34,8 @@
       ]
     },
     {
-      "name": "<count-stats>",
-      "component": "count-stats",
+      "name": "<counts-data>",
+      "component": "counts-data",
       "data": {
         "columns": [
           {

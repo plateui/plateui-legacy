@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import http from '@/services/http'
 import LineChart from './LineChart.vue'
 import { genLineOptions, formatArrayData } from './util'
 
@@ -34,7 +35,7 @@ export default {
     async fetch () {
       this.loading = true
       const url = this.endpoint
-      const { data } = await this.$http.get(url)
+      const { data } = await http.get(url)
       const { labels, datasets } = formatArrayData(data)
       this.labels = labels
       this.datasets = datasets

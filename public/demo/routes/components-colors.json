@@ -3,7 +3,7 @@
   "views": [{
     "name": "Colors",
     "summary": "Our built-in colors in Plate UI.",
-    "component": "content",
+    "component": "content-data",
     "data": {
       "type": "text/html",
       "box": true,

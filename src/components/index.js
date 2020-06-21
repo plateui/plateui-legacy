@@ -2,20 +2,22 @@ import icons from './icons'
 import Empty from './fragments/Empty'
 import Spinner from './fragments/Spinner'
 import Count from './count/Count'
-import CountStats from './count/CountStats'
+import CountsData from './count/CountsData'
 import TableData from './table/TableData'
 import ListData from './list/ListData'
 import Content from './display/Content'
+import ContentData from './display/ContentData'
 import Chart from './charts/Chart'
 import LineChart from './charts/LineChart'
 import LineChartData from './charts/LineChartData'
 
 const _COMPONENTS = [
   Count,
-  CountStats,
+  CountsData,
   TableData,
   ListData,
   Content,
+  ContentData,
   Chart,
   LineChart,
   LineChartData,

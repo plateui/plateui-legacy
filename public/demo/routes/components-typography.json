@@ -2,7 +2,7 @@
   "name": "Components",
   "views": [{
     "name": "Typography",
-    "component": "content",
+    "component": "content-data",
     "data": {
       "type": "text/html",
       "box": true,

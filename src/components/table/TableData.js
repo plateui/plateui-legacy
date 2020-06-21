@@ -1,4 +1,5 @@
 import './table.css'
+import http from '@/services/http'
 import TableContent from './TableContent'
 import Pagination from '../fragments/Pagination'
 
@@ -44,7 +45,7 @@ export default {
       if (order) {
         params.order = order
       }
-      const { pagination, items } = await this.$http.paginate(url, params)
+      const { pagination, items } = await http.paginate(url, params)
 
       this.items = items
       this.pagination = pagination

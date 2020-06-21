@@ -3,7 +3,7 @@
   "views": [
     {
       "name": "GitHub Stats",
-      "component": "count-stats",
+      "component": "counts-data",
       "data": {
         "columns": [
           {
