@@ -1,11 +1,11 @@
 {
   "name": "plateui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Hsiaoming Yang",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plateui/plate.git"
+    "url": "git+https://github.com/plateui/plateui.git"
   },
-  "homepage": "https://github.com/plateui/plate"
+  "homepage": "https://plateui.com"
 }
