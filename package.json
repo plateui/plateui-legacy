@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "chart.js": "^2.9.3",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "moment": "^2.26.0",
     "path-to-regexp": "^6.1.0",
     "vue": "^2.6.11",
